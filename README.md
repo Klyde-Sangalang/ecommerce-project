@@ -37,19 +37,19 @@ This is a **full-stack e-commerce application** that includes three main parts:
 <table>
   <tr>
     <td><b>Frontend</b></td>
-    <td>React / Next.js, TailwindCSS</td>
+    <td>React, CSS</td>
   </tr>
   <tr>
     <td><b>Backend</b></td>
-    <td>Node.js, Express.js, MongoDB (or SQL)</td>
+    <td>Node.js, Express.js, MongoDB</td>
   </tr>
   <tr>
     <td><b>Admin</b></td>
-    <td>React / Next.js + Chart libraries for analytics</td>
+    <td>React / Next.js</td>
   </tr>
   <tr>
     <td><b>Other</b></td>
-    <td>JWT, REST API, GitHub Actions (CI/CD)</td>
+    <td>JWT, REST API, GitHub Actions</td>
   </tr>
 </table>
 
