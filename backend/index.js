@@ -81,15 +81,12 @@ const Product = mongoose.model('Product', {
     },
     description: {
         type: String,
-        required: true
     },
     category_desc: {
         type: String,
-        required: true
     },
     tags: {
         type: String,
-        required: true
     }
 })
 
@@ -113,9 +110,9 @@ app.post('/addproduct', async(req,res)=> {
         old_price: req.body.old_price,
         date: req.body.date,
         availability: req.body.availability,
-        description: req.body.description,
-        category_desc: req.body.category_desc,
-        tags: req.body.tags
+        description: req.body.description??"",
+        category_desc: req.body.category_desc??"",
+        tags: req.body.tags??""
     });
     console.log(product);
     await product.save();
@@ -144,6 +141,8 @@ app.get('/allproducts', async(req,res)=> {
     console.log("All Products Fetched");
     res.send(products);
 })
+
+
 
 app.listen(port,(error)=>{
     if (!error) {
