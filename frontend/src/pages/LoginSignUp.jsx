@@ -31,6 +31,8 @@ export const LoginSignUp = () => {
     if (responseData.success) {
       localStorage.setItem('auth-token', responseData.token);
       window.location.replace("/");
+    } else {
+      alert(responseData.error);
     }
   }
 
