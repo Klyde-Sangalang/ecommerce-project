@@ -6,7 +6,7 @@ import { ShopContext } from '../../context/ShopContext';
 
 const NewCollections = () => {
   const {all_product} = useContext(ShopContext);
-  const new_collection = all_product.slice(-8).reverse();
+  const new_collection = all_product.slice(-12).reverse();
   return (
     <div className="new-collections">
         <h1>NEW COLLECTIONS</h1>

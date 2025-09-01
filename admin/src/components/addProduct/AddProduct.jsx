@@ -57,7 +57,7 @@ const AddProduct = () => {
                   image: "",
                   old_price: "0",
                   new_price: "",
-                  category: "Women",
+                  category: "women",
                   description: "",
                   category_desc: "",
                   tags: "",

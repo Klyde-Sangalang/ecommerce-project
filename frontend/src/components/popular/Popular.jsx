@@ -8,9 +8,17 @@ import { ShopContext } from '../../context/ShopContext';
 export const Popular = () => {
   
   const {all_product} = useContext(ShopContext);
-  const data_product_women = all_product.filter((item) => item.category === "women");
-  const data_product_men = all_product.filter((item) => item.category === "men");
-  const data_product_kids = all_product.filter((item) => item.category === "kids");
+  const data_product_women = all_product
+    .filter((item) => item.category?.toLowerCase() === "women")
+    .slice(0, 4);
+
+  const data_product_men = all_product
+    .filter((item) => item.category?.toLowerCase() === "men")
+    .slice(0, 4);
+
+  const data_product_kids = all_product
+    .filter((item) => item.category?.toLowerCase() === "kids")
+    .slice(0, 4);
 
   return (
     <div className="popular">

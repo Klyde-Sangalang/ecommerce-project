@@ -16,7 +16,7 @@ export const Product = () => {
       <Breadcrum product={product} />
       <ProductDisplay product={product} />
       <DescriptionBox product={product}/>
-      <RelatedProducts />
+      <RelatedProducts product={product}/>
     </div>
   )
 }
