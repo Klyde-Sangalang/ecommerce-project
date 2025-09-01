@@ -12,9 +12,11 @@ export const Item = (props) => {
             <div className="item-price-new">
                 ₱{props.new_price}
             </div>
+            {props.old_price === 0 ? <></> : 
             <div className="item-price-old">
                 ₱{props.old_price}
             </div>
+            }
         </div>
 
     </div>

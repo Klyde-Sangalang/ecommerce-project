@@ -102,6 +102,7 @@
 
 .productdisplay-right-category {
     margin-top: 10px;
+    text-transform: capitalize;
 }
 
 .productdisplay-right-category span {

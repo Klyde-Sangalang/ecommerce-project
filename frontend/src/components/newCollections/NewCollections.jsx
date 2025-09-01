@@ -1,8 +1,12 @@
-import new_collection from '../assets/new_collections';
 import Item from '../item/Item';
 import './NewCollections.css';
 
+import { useContext } from 'react';
+import { ShopContext } from '../../context/ShopContext';
+
 const NewCollections = () => {
+  const {all_product} = useContext(ShopContext);
+  const new_collection = all_product.slice(-8).reverse();
   return (
     <div className="new-collections">
         <h1>NEW COLLECTIONS</h1>

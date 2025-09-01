@@ -15,7 +15,7 @@ export const Product = () => {
     <div className="product">
       <Breadcrum product={product} />
       <ProductDisplay product={product} />
-      <DescriptionBox />
+      <DescriptionBox product={product}/>
       <RelatedProducts />
     </div>
   )

@@ -7,7 +7,7 @@ const AddProduct = () => {
   const [productDetails, setProductDetails] = useState({
     name: "",
     image: "",
-    old_price: "",
+    old_price: "0",
     new_price: "",
     category: "Women",
     description: "",
@@ -50,7 +50,22 @@ const AddProduct = () => {
             },
             body : JSON.stringify(product)
         }).then((resp)=>resp.json()).then((data)=>{
-            data.success?alert("Product Added Successfully"):alert("Error Occured");
+            if (data.success) {
+                alert("Product Added Successfully");
+                setProductDetails({
+                  name: "",
+                  image: "",
+                  old_price: "0",
+                  new_price: "",
+                  category: "Women",
+                  description: "",
+                  category_desc: "",
+                  tags: "",
+              });
+              setImage(false);
+            } else {
+              alert("Error Occurred");
+            }
         })
     }
 
@@ -66,11 +81,11 @@ const AddProduct = () => {
       <div className="addproduct-price">
         <div className="addproduct-itemfield">
           <p>Price</p>
-          <input value={productDetails.old_price} onChange={changeHandler} type="text" name="old_price" placeholder="Type Here" />
+          <input value={productDetails.new_price} onChange={changeHandler} type="text" name="new_price" placeholder="Type Here" />
         </div>
         <div className="addproduct-itemfield">
-          <p>Offer Price</p>
-          <input value={productDetails.new_price} onChange={changeHandler} type="text" name="new_price" placeholder="Type Here" />
+          <p>Old Price (optional)</p>
+          <input value={productDetails.old_price} onChange={changeHandler} type="text" name="old_price" placeholder="Type Here" />
         </div>
       </div>
 

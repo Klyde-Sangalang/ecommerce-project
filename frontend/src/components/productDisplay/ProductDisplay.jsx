@@ -39,9 +39,6 @@ const ProductDisplay = (props) => {
                 <div className="productdisplay-right-price-old">₱{product.old_price}</div>
                 <div className="productdisplay-right-price-new">₱{product.new_price}</div>
             </div>
-            <div className="productdisplay-right-description">
-                {product.description}
-            </div>
             <div className="productdisplay-right-size">
                 <div className="productdisplay-right-size">
                     <h1>Select Size</h1>
@@ -58,8 +55,8 @@ const ProductDisplay = (props) => {
                     <button>BUY NOW</button>
                 </div>
                 
-                <p className="productdisplay-right-category"><span>Category : </span>{product.category_desc}</p>
-                <p className="productdisplay-right-category"><span>Tags : </span>{product.tags}</p>
+                <p className="productdisplay-right-category"><span>Category : </span>{product.category}</p>
+                <p className="productdisplay-right-category"><span>Tags : </span>{product.tags === "" ? product.category : product.tags}</p>
             </div>
         </div>
     </div>
