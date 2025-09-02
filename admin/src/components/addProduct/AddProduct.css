@@ -12,9 +12,13 @@
     width: 100%;
     color: #7b7b7b;
     font-size: 16px;
+    margin-bottom: 15px;
 }
 
-.addproduct-itemfield input {
+
+
+.addproduct-itemfield input[type="text"],
+.addproduct-itemfield textarea {
     box-sizing: border-box;
     width: 100%;
     height: 50px;
@@ -27,11 +31,32 @@
     font-size: 14px;
 }
 
-.addproduct-price {
+.addproduct-itemfield input[type="number"],
+.addproduct-itemfield textarea {
+    box-sizing: border-box;
+    width: 100%;
+    height: 50px;
+    border-radius: 4px;
+    padding-left: 15px;
+    border: 1px solid #c3c3c3;
+    outline: none;
+    color: #7b7b7b;
+    font-family: 'Poppins';
+    font-size: 14px;
+}
+
+.addproduct-itemfield textarea {
+    height: 150px;
+    font-size: 16px;
+}
+
+/* Price section */
+.addproduct-price, .addproduct-tags, .addproduct-imagestock{
     display: flex;
     gap: 40px;
 }
 
+/* Category selector */
 .add-product-selector {
     padding: 10px;
     width: 100px;
@@ -39,9 +64,9 @@
     font-size: 14px;
     color: #7b7b7b;
     border: 1px solid #7b7b7b8d;
-    
 }
 
+/* Upload */
 .upload-icon {
     height: 120px;
     width: 120px;
@@ -50,6 +75,7 @@
     margin: 10px 0px;
 }
 
+/* Button */
 .addproduct-btn {
     margin-top: 10px;
     width: 160px;
@@ -63,15 +89,76 @@
     font-weight: 500;
 }
 
-.addproduct-itemfield textarea {
-    width: 100%;
-    height: 150px;
-    font-size: 16px;
-    color: #7b7b7b;
-    border: 1px solid #7b7b7b8d;
-    border-radius: 4px;
+/* Sizes checkbox */
+.addproduct-sizes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 8px;
 }
 
+.checkbox-label {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #333;
+}
+
+.addproduct-sizes-category {
+    display: flex;
+    gap: 60px;
+    margin-top: 20px;
+}
+
+.addproduct-catdes-tags {
+    display: flex;
+    gap: 40px;
+}
+
+.addproduct-catdes-tags .addproduct-itemfield {
+    margin-right: 20px;
+    width: 40%;
+}
+
+/* Hide default checkbox */
+.checkbox-label input[type="checkbox"] {
+    display: none;
+}
+
+/* Custom checkbox style */
+.checkbox-custom {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #c3c3c3;
+    border-radius: 4px;
+    display: inline-block;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+/* Checked state */
+.checkbox-label input[type="checkbox"]:checked + .checkbox-custom {
+    background: #808080;
+    border-color: #808080;
+}
+
+/* Checkmark */
+.checkbox-label input[type="checkbox"]:checked + .checkbox-custom::after {
+    content: "";
+    position: absolute;
+    left: 4px;
+    top: 0px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+/* Responsive */
 @media(max-width: 800px){
     .addproduct {
         width: auto;

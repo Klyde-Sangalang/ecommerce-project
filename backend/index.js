@@ -87,7 +87,23 @@ const Product = mongoose.model('Product', {
     },
     tags: {
         type: String,
-    }
+    },
+    stock: {
+        type: Number,
+        default: 0,
+    },
+    reviews: {
+        type: Array,
+        default: []
+    },
+    size: {
+        type: Array,
+        default: []
+    },
+    visits: {
+        type: Number,
+        default: 0
+    },
 })
 
 app.post('/addproduct', async(req,res)=> {
@@ -112,7 +128,11 @@ app.post('/addproduct', async(req,res)=> {
         availability: req.body.availability,
         description: req.body.description??"",
         category_desc: req.body.category_desc??"",
-        tags: req.body.tags??""
+        tags: req.body.tags??"",
+        stock: req.body.stock??0,
+        reviews: req.body.reviews??[],
+        size: req.body.sizes??[],
+        visits: req.body.visits??0
     });
     console.log(product);
     await product.save();
