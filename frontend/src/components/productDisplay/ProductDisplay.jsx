@@ -57,7 +57,7 @@ const ProductDisplay = (props) => {
                 </div>
                 
                 <p className="productdisplay-right-category"><span>Category : </span>{product.category}</p>
-                <p className="productdisplay-right-category"><span>Tags : </span>{product.tags === "" ? product.category : product.tags}</p>
+                <p className="productdisplay-right-category"><span>Tags : </span>{product.category_desc === "" ? product.category_desc : product.tags}</p>
             </div>
         </div>
     </div>

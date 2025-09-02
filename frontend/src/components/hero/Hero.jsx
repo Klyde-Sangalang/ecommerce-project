@@ -18,7 +18,8 @@ export const Hero = () => {
                 <p>Collections</p>
                 <p>For Everyone</p>
             
-            <div className="hero-latest-btn">
+            <div className="hero-latest-btn" 
+            onClick={()=>document.querySelector(".new-collections")?.scrollIntoView({ behavior: "smooth" })}>
                 <div>Latest Collection</div>
                 <img src={arrow_icon} alt="arrow" />
             </div>

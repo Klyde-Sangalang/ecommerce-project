@@ -45,6 +45,7 @@
 .cartitems-down {
     display: flex;
     margin: 100px 0px;
+    max-width: 800px;
 }
 
 .cartitems-total {
