@@ -63,5 +63,4 @@ ecommerce-project/
 ├── frontend/    # Customer-facing store
 ├── backend/     # API & database logic
 ├── admin/       # Admin dashboard
-├── docs/        # Documentation (ERD, API docs, etc.)
 └── README.md
