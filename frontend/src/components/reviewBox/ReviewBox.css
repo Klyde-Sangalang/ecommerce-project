@@ -1,0 +1,52 @@
+.reviewbox {
+    display: flex;
+    flex-direction: column;
+}
+
+.reviewbox-main-container {
+    display: flex;
+    gap: 30px;
+    height: 200px;
+}
+
+.reviewbox-main-right {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 1;
+}
+
+.reviewbox-main-left img{
+    height: 200px;
+    width: 200px;
+    object-fit: contain;
+}
+
+.descriptionbox-review-rating img {
+    width: 25px;
+}
+
+.reviewbox-header {
+    display: flex;
+    margin-bottom: 10px;
+    gap: 20px;
+}
+
+.reviewbox-header img {
+    height: 30px;
+    width: 30px;
+    object-fit: contain;
+    border-radius: 50%;
+    background: #e0e0e0;
+    padding: 5px;
+}
+
+.reviewbox-header h2 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.reviewbox hr {
+    border: 0.5px solid #d0d0d0;
+    margin: 20px 0px;
+}

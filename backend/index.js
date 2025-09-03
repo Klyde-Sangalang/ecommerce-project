@@ -106,6 +106,26 @@ const Product = mongoose.model('Product', {
     },
 })
 
+// Schema for Review Model
+const Review = mongoose.model('Review', {
+    image: {
+        type: String,
+        required: true,
+    },
+    user: {
+        type: Number,
+        required: true,
+    },
+    rating: {
+        type: String,
+        required: true,
+    },
+    comment: {
+        type: String,
+    },
+})
+
+
 app.post('/addproduct', async(req,res)=> {
     let products = await Product.find({});
     let id;
@@ -165,6 +185,41 @@ app.post('/updatevisits', async(req,res)=> {
         name: req.body.name
     })
 })
+
+// Add feature to update stock of product when visited
+
+// Add feature for review of product
+app.post('/addreview', async (req, res) => {
+  try {
+    const product = await Product.findOne({ id: req.body.id });
+    if (!product) {
+      return res.status(404).json({ success: 0, message: "Product not found" });
+    }
+
+    // keep username as a single string inside user object
+    const review = {
+      image: req.body.image,
+      user: {
+        username: req.body.user   // string, not array
+      },
+      rating: req.body.rating,
+      comment: req.body.comment,
+    };
+
+    product.reviews.push(review);
+    await product.save();
+
+    res.json({
+      success: 1,
+      message: "Review added successfully",
+      review
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ success: 0, message: "Server error" });
+  }
+});
+
 
 // Creating API for getting All Products
 

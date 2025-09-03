@@ -8,9 +8,15 @@ import star_icon from '../assets/star_icon.png';
 
 const ProductDisplay = (props) => {
     const {product} = props;
+    
 
     const {addToCart} = useContext(ShopContext);
+    
+    const averageRating = product.reviews.length > 0 
+  ? Math.round(product.reviews.reduce((sum, r) => sum + r.rating, 0) / product.reviews.length)
+  : 0;
 
+    console.log(averageRating);
 
   return (
     <div className="productdisplay">
@@ -29,16 +35,20 @@ const ProductDisplay = (props) => {
         <div className="productdisplay-right">
             <h1>{product.name}</h1>
             <div className="productdisplay-right-star">
-                <img src={star_icon} alt="" />
-                <img src={star_icon} alt="" />
-                <img src={star_icon} alt="" />
-                <img src={star_icon} alt="" />
-                <img src={star_dull_icon} alt="" />
-                <p>(122)</p>
+                {Array.from({ length: averageRating}, (_, i) => (
+                    <img key={i} src={star_icon} alt="star" />
+                ))}
+
+                {Array.from({ length: 5 - averageRating}, (_, i) => (
+                    <img key={i} src={star_dull_icon} alt="star_dull" />
+                ))}
+                <div>({product.reviews.length})</div>
             </div>
             <div className="productdisplay-right-prices">
                 <div className="productdisplay-right-price-new">₱{product.new_price}</div>
-                <div className="productdisplay-right-price-old">₱{product.old_price}</div>
+                {product.old_price === 0 ? <></> : 
+                <div className="productdisplay-right-price-old">₱{product.old_price}</div>}
+                
             </div>
             <div className="productdisplay-visits">
                 <p>Views: {product.visits}</p>
