@@ -154,6 +154,18 @@ app.post('/removeproduct', async(req, res)=> {
     })
 })
 
+// Add feature to update visits of product when visited
+app.post('/updatevisits', async(req,res)=> {
+    let product = await Product.findOne({id:req.body.id});
+    product.visits = product.visits + 1;
+    await product.save();
+    console.log("Product Visits Updated");
+    res.json({
+        success: 1,
+        name: req.body.name
+    })
+})
+
 // Creating API for getting All Products
 
 app.get('/allproducts', async(req,res)=> {

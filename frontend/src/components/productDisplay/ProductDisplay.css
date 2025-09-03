@@ -53,12 +53,12 @@
 }
 
 .productdisplay-right-price-old {
-    color: #818181;
+    color: #ff4141;
     text-decoration: line-through;
 }
 
 .productdisplay-right-price-new {
-    color: #ff4141;   
+    color: #818181;   
 }
 
 .productdisplay-right-size h1 {
