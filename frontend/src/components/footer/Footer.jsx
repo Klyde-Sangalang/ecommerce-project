@@ -39,7 +39,7 @@ const Footer = () => {
         
         <div className="footer-copyright">
             <hr />
-            <p>Copyright © 2025 KAM Ecommerce. All rights reserved.</p>
+            <p>Personal Project of Klyde Sangalang</p>
         </div>
     
     </div>
