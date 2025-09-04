@@ -9,7 +9,7 @@ export const Hero = () => {
     <div className="hero">
         <div className="hero-left">
             <img src={hero_image} className="hero-image" alt="hero" />
-            <h2>NEW ARRIVALS ONLY</h2>
+            <h2>Hot & Fresh Styles</h2>
             
                 <div className="hero-hand-icon">
                     <p>New</p>

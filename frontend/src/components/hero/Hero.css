@@ -2,7 +2,7 @@
     
     height: 100%;
     max-width: 1280px;
-    background: linear-gradient(180deg, #fde1ff, #e1ffea22 60%);
+    background: linear-gradient(180deg, #7c7c7c, #18181822 60%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -55,7 +55,7 @@
     height: 70px;
     border-radius: 75px;
     margin-top: 30px;
-    background: #ff4141;
+    background: #383838;
     color: white;
     font-size: 22px;
     font-weight: 500;
