@@ -1,8 +1,9 @@
 import './Hero.css';
 
 import arrow_icon from '../assets/arrow.png';
-import hand_icon from '../assets/hand_icon.png';
+// import hand_icon from '../assets/hand_icon.png';
 import hero_image from '../assets/hero_image.png';
+import star_icon from '../assets/star_hero.png';
 
 export const Hero = () => {
   return (
@@ -13,7 +14,7 @@ export const Hero = () => {
             
                 <div className="hero-hand-icon">
                     <p>New</p>
-                    <img src={hand_icon} alt="hand" />
+                    <img src={star_icon} alt="hand" />
                 </div>
                 <p>Collections</p>
                 <p>For Everyone</p>
