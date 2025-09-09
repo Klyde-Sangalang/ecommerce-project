@@ -15,16 +15,36 @@ const getDefaultCart = () => {
 const ShopContextProvider = (props) => {
 
     const [all_product, setAll_Product] = useState([]);
-
     const [cartItems, setCartItems] = useState(getDefaultCart());
+    const [user, setUser] = useState(null);
 
     useEffect(()=> {
         fetch("http://localhost:4000/allproducts")
         .then((res)=>res.json())
         .then((data)=>setAll_Product(data))
     },[])
+
     
+    // Function for user persistance
+    useEffect(()=> {
+        const storedUser = localStorage.getItem("user");
+        if (storedUser) {
+            setUser(JSON.parse(storedUser));
+        }
+    }, []);
+
+
+    const login = (userData) => {
+        localStorage.setItem("user", JSON.stringify(userData));
+        setUser(userData);
+    };
+
+    const logout = () => {
+        localStorage.removeItem("user");
+        setUser(null);
+    };
     
+    // Cart Functions
     const addToCart = (itemId) => {
         setCartItems((prev)=>({...prev, [itemId]: prev[itemId]+1}));
     }
@@ -53,7 +73,17 @@ const ShopContextProvider = (props) => {
         return totalItem;
     }
 
-    const contextValue = {getTotalCartItems, getTotalCartAmount, all_product, cartItems, addToCart, removeFromCart, };
+    const contextValue = {
+        getTotalCartItems, 
+        getTotalCartAmount, 
+        all_product, 
+        cartItems, 
+        addToCart, 
+        removeFromCart, 
+        user,
+        login,
+        logout
+    };
     
 
     return (

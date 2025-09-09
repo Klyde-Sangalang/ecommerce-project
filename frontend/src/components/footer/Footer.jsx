@@ -39,7 +39,7 @@ const Footer = () => {
         
         <div className="footer-copyright">
             <hr />
-            <p>Personal Project of Klyde Sangalang</p>
+            <p>All Rights Reser</p>
         </div>
     
     </div>

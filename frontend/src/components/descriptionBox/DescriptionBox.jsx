@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import ReviewBox from '../reviewBox/ReviewBox';
+import ReviewComment from '../reviewComment/ReviewComment';
 import './DescriptionBox.css';
 
 const DescriptionBox = ({ product }) => {
@@ -32,8 +33,8 @@ const DescriptionBox = ({ product }) => {
             <ReviewBox key={index} image={e.image} username={e.user.username} rating={e.rating} comment={e.comment} />
           ))
         )}
-        {/* <ReviewBox /> */}
-        HELLO
+        <hr />
+        <ReviewComment />
       </div>
       }
     </div>

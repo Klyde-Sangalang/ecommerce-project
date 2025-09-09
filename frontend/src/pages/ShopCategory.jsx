@@ -19,10 +19,6 @@ const ShopCategory = (props) => {
     setCurrentPage(page);
   }
 
-
-  
-  
-
   return (
     <div className="shop-category">
       <img className="shopcategory-banner" src={props.banner} alt="banner" />
