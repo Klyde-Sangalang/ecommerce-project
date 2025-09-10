@@ -39,7 +39,7 @@ const Footer = () => {
         
         <div className="footer-copyright">
             <hr />
-            <p>All Rights Reser</p>
+            <p>Copyright © 2025 Tshee. All rights reserved.</p>
         </div>
     
     </div>
