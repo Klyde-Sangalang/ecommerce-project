@@ -7,7 +7,6 @@ import './css/Shop.css';
 
 export const Shop = () => {
   
-  
   return (
     <div className="shop">
       <Hero />

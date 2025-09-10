@@ -196,11 +196,10 @@ app.post('/addreview', async (req, res) => {
       return res.status(404).json({ success: 0, message: "Product not found" });
     }
 
-    // keep username as a single string inside user object
     const review = {
       image: req.body.image,
       user: {
-        username: req.body.user   // string, not array
+        username: req.body.user   
       },
       rating: req.body.rating,
       comment: req.body.comment,
@@ -227,6 +226,13 @@ app.get('/allproducts', async(req,res)=> {
     let products = await Product.find({});
     console.log("All Products Fetched");
     res.send(products);
+})
+
+// Creating API for getting User
+app.post('/getUserData', async(req,res)=> {
+    let user = await Users.findOne({email:req.body.email});
+    console.log("User Fetched");
+    res.send(user);
 })
 
 // Schema Creating for User Model

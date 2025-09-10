@@ -1,8 +1,8 @@
-import { useContext, useState } from 'react';
-import { ShopContext } from '../context/ShopContext';
+import { useState } from 'react';
 import './css/LoginSignUp.css';
 
 export const LoginSignUp = () => {
+  const [user, setUser] = useState(null);
   const [state, setState] = useState("Sign Up");
   const [formData, setFormData] = useState({
     username: "",
@@ -10,12 +10,10 @@ export const LoginSignUp = () => {
     email: "",
   });
 
-  // Get the login function from ShopContext
-  const { login } = useContext(ShopContext);
-
   const changeHandler = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
+
 
   const handleLogin = async () => {
     console.log("login", formData);
@@ -33,12 +31,39 @@ export const LoginSignUp = () => {
     if (responseData.success) {
       // Instead of directly storing the token, use the context's login function.
       // Assuming responseData includes a "user" field with user details.
-      login(responseData.user);
+      console.log("LOGIN success");
+      console.log(responseData);
+      localStorage.setItem("auth-token", responseData.token);
+      await getUser(formData.email);
+      // login(responseData.user);
+      alert("Login Successful");
       window.location.replace("/");
     } else {
       alert(responseData.error);
     }
   };
+
+
+
+  const getUser = async(email) => {
+    await fetch("http://localhost:4000/getUserData", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: email,
+      }),
+    })
+      .then((resp) => resp.json())
+      .then((data) => {
+        
+        console.log("Fetched User");
+        setUser(data.username);
+        localStorage.setItem("user", data.username);
+        console.log("Set User");
+      });
+  }
 
   const handleSignup = async () => {
     console.log("signup", formData);
@@ -55,8 +80,8 @@ export const LoginSignUp = () => {
 
     if (responseData.success) {
       // Use the context's login function after successful signup.
-      login(responseData.user);
-      window.location.replace("/");
+      console.log("signup success");
+      // window.location.replace("/");
     } else {
       alert(responseData.error);
     }

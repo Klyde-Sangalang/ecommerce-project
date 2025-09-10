@@ -26,12 +26,12 @@ const ShopContextProvider = (props) => {
 
     
     // Function for user persistance
-    useEffect(()=> {
-        const storedUser = localStorage.getItem("user");
-        if (storedUser) {
-            setUser(JSON.parse(storedUser));
-        }
-    }, []);
+    // useEffect(()=> {
+    //     const storedUser = localStorage.getItem("user");
+    //     if (storedUser) {
+    //         setUser(JSON.parse(storedUser));
+    //     }
+    // }, []);
 
 
     const login = (userData) => {
