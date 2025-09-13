@@ -89,7 +89,7 @@ const ReviewComment = () => {
       ) : (
         <div className="reviewcomment">
           <h2>Leave a Comment</h2>
-          <h4>Using your username: {user}</h4>
+          <h4>Using your username:  {user}</h4>
 
           {/* Upload Image */}
           <div className="reviewcomment-itemfield">
